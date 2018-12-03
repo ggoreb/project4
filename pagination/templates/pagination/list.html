@@ -1,0 +1,30 @@
+<table>
+    <tr>
+        <td>번호</td>
+        <td>제목</td>
+        <td>내용</td>
+    </tr>
+    {% for board in page_info %}
+    <tr>
+        <td>{{ board.id }}</td>
+        <td>{{ board.title }}</td>
+        <td>{{ board.content }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="pagination">
+ <span class="step-links">
+ {% if page_info.has_previous %}
+ <a href="?page=1">&laquo; first</a>
+ <a href="?page={{ page_info.previous_page_number }}">previous</a>
+ {% endif %}
+ <span class="current">
+ Page {{ page_info.number }} of {{ page_info.paginator.num_pages }}.
+ </span>
+ {% if page_info.has_next %}
+ <a href="?page={{ page_info.next_page_number }}">next</a>
+ <a href="?page={{ page_info.paginator.num_pages }}">last &raquo;</a>
+ {% endif %}
+ </span>
+</div>
