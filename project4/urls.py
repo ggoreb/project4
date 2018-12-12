@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('insert', views.insert),
     path('list', views.list),
+    path('list2', views.list2),
 ]
 
 
